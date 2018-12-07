@@ -1,7 +1,5 @@
 package models;
 
-import java.util.ArrayList;
-
 public class BattleController {
 
     public void run() {
@@ -12,10 +10,10 @@ public class BattleController {
 //        Ship[] ships = new Ship[10];
         Printer printer = new Printer();
 
-        ArrayList<Cell> cellsUser1 = new ArrayList<Cell>();
-        cellsUser1 = field1.getCells();
-        ArrayList<Cell> cellsUser2 = new ArrayList<Cell>();
-        cellsUser2 = field1.getCells();
+        Cell[][] cellsUser1 = field1.getCells();
+
+        Cell[][] cellsUser2 = field2.getCells();
+
 
         printer.setCellsUserAndComputer(cellsUser1, true);
         printer.setCellsUserAndComputer(cellsUser2, false);

@@ -7,12 +7,18 @@ public class Cell {
     int coordinationY;
 
 
-    public Cell(int coordinationX , int coordinationY){
+    public Cell(int coordinationX, int coordinationY) {
         this.coordinationX = coordinationX;
         this.coordinationY = coordinationY;
     }
 
     public void print() {
-        System.out.print("*");
+        if (hasShip) {
+            System.out.println("%");
+        } else {
+            System.out.println("*");
+        }
     }
+
+
 }

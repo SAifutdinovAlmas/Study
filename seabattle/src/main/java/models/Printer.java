@@ -1,12 +1,10 @@
 package models;
 
-import java.util.ArrayList;
-
 public class Printer {
-    private ArrayList<Cell> cellsUser1;
-    private ArrayList<Cell> cellsUser2;
+    private Cell[][] cellsUser1;
+    private Cell[][] cellsUser2;
 
-    void setCellsUserAndComputer(ArrayList<Cell> cells, boolean isUser1) {
+    void setCellsUserAndComputer(Cell[][] cells, boolean isUser1) {
         if (isUser1) {
             this.cellsUser1 = cells;
         } else {
@@ -14,20 +12,34 @@ public class Printer {
         }
     }
 
-    void print(){
-        int count = 0;
-        for (int i = 0; i < cellsUser1.size(); i ++) {
-            if (i / 10 > count) {
-                System.out.println();
-                count = i / 10;
+    void print() {
+        for (int i = 0; i < 10; i++) {
+            System.out.println();
+            for (int j = 0; j < 10; j++) {
+                cellsUser1[i][j].print();
+                if (j == 9) {
+                    System.out.print("         ");
+                    for (int k = 0; k < 10; k ++) {
+                        cellsUser2[i][k].print();
+                    }
+                }
             }
-            cellsUser1.get(i).print();
-        //            System.out.print("          ");
-            if (i == 9 ) {
-                System.out.print("          ");
-            }
-
-            cellsUser2.get(i).print();
         }
+
+
+//        int count = 0;
+//        for (int i = 0; i < cellsUser1.size(); i++) {
+//            if (i / 10 > count) {
+//
+//                System.out.print("              ");
+//                for (int j = 0; j < 10; j++) {
+//                    cellsUser2.get(j).print();
+//                }
+//
+//                System.out.println();
+//                count = i / 10;
+//            }
+//            cellsUser1.get(i).print();
+//        }
     }
 }
